@@ -17,21 +17,17 @@ class Dashboard extends StatelessWidget {
           centerTitle: true,
           elevation: 0,
           actions: [
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Container(
-                height: 100,
-                width: 110,
-                decoration: const BoxDecoration(
-                    color: Color.fromRGBO(230, 230, 250, 0.2),
-                    borderRadius: BorderRadiusDirectional.only(
-                      topStart: Radius.elliptical(80, 400),
-                    )),
-                child: IconButton(
-                  icon: const Icon(Icons.settings),
-                  onPressed: () {},
-                ),
+            Container(
+              height: 100,
+              width: 110,
+              decoration: const BoxDecoration(
+                  color: Color.fromRGBO(230, 230, 250, 0.2),
+                  borderRadius: BorderRadiusDirectional.only(
+                    topStart: Radius.elliptical(80, 400),
+                  )),
+              child: IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () {},
               ),
             ),
           ],

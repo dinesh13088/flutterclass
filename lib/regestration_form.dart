@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:secondsemflut/sevice/firebase_auth_service.dart';
 
 class RegestrationForm extends StatelessWidget{
    RegestrationForm({super.key});
@@ -116,11 +118,12 @@ class RegestrationForm extends StatelessWidget{
                       {
                         if(_formKey.currentState!.validate())
                         {
-                          print('the entered first name ${_fullNameController.text}');
-                          print('the entered first name ${_emailController.text}');
-                          print('the entered first name ${_passwordController.text}');
-
-                        }
+                          final email =_emailController.text;
+                          final password = _passwordController.text;
+                          final firebaseAuthService =FirebaseAuthService();
+                          firebaseAuthService.createUserWithAndPassword(email, password);
+                                                
+                         }
                       }
                     },
 

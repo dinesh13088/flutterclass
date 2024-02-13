@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:secondsemflut/dashboard.dart';
 import 'package:secondsemflut/listPage.dart';
@@ -6,8 +7,10 @@ import 'package:secondsemflut/offers.dart';
 import 'package:secondsemflut/profile.dart';
 import 'package:secondsemflut/register.dart';
 import 'package:secondsemflut/splash.dart';
+import 'package:secondsemflut/utils/default_firebase_option.dart';
 
 void main() {
+  initializeFirebase();
   runApp(MaterialApp(
     title: 'Flutter App!!',
     theme: ThemeData(
@@ -36,15 +39,18 @@ void main() {
     ),
     
     routes: {
-      '/': (context) => const MyApp(),
+      '/': (context) => const Splash(),
       '/register': (context) => const Register(),
       '/listPage': (context) => const ListPage(),
       '/dashboard': (context) => const Dashboard(),
-      '/splash': (context) => const Splash(),
+      '/myAPp': (context) => const MyApp(),
     },
     initialRoute: '/',
     debugShowCheckedModeBanner: false,
   ));
+}
+Future<void> initializeFirebase ()async{
+  await Firebase.initializeApp(options:DefaultFirebaseOptions.web );
 }
 
 class MyApp extends StatefulWidget {
