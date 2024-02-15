@@ -4,11 +4,10 @@ import 'package:secondsemflut/dashboard.dart';
 import 'package:secondsemflut/listPage.dart';
 import 'package:secondsemflut/list_view_page.dart';
 import 'package:secondsemflut/offers.dart';
-import 'package:secondsemflut/profile.dart';
 import 'package:secondsemflut/regestration_form.dart';
 import 'package:secondsemflut/register.dart';
 import 'package:secondsemflut/splash.dart';
-import 'package:secondsemflut/utils/default_firebase_option.dart';
+
 
 void main() {
   initializeFirebase();
