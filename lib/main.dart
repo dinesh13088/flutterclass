@@ -5,6 +5,7 @@ import 'package:secondsemflut/listPage.dart';
 import 'package:secondsemflut/list_view_page.dart';
 import 'package:secondsemflut/offers.dart';
 import 'package:secondsemflut/profile.dart';
+import 'package:secondsemflut/regestration_form.dart';
 import 'package:secondsemflut/register.dart';
 import 'package:secondsemflut/splash.dart';
 import 'package:secondsemflut/utils/default_firebase_option.dart';
@@ -50,7 +51,15 @@ void main() {
   ));
 }
 Future<void> initializeFirebase ()async{
-  await Firebase.initializeApp(options:DefaultFirebaseOptions.web );
+  await Firebase.initializeApp(options:const FirebaseOptions(
+  apiKey: "AIzaSyCjUQU8wPj1FhGyV9A0czbHGTJmtJqp3Us",
+  authDomain: "samriddi-3rdsem-sec-b.firebaseapp.com",
+  projectId: "samriddi-3rdsem-sec-b",
+  storageBucket: "samriddi-3rdsem-sec-b.appspot.com",
+  messagingSenderId: "1018205099162",
+  appId: "1:1018205099162:web:62d84c572e0859b0823b23",
+  measurementId: "G-TW3QGMD0H4"
+  ) );
 }
 
 class MyApp extends StatefulWidget {
@@ -61,7 +70,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> pages = const [Dashboard(), ListViewPage(), Profile(), Offers()];
+  List<Widget> pages =  [const Dashboard(), const ListViewPage(), RegestrationForm(),const  Offers()];
   int currentPage = 0;
   // This widget is the root of your application.
   @override
