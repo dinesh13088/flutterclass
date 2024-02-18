@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632534901534",
+    "project_id": "secondsem-1cb59",
+    "storage_bucket": "secondsem-1cb59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632534901534:android:f790596508b1809f511f0f",
+        "android_client_info": {
+          "package_name": "com.example.secondsemflut"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiaW1c9btdDaIQQm_R7tHPVOyn0m44AqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

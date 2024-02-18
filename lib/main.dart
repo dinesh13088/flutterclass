@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:secondsemflut/dashboard.dart';
 import 'package:secondsemflut/listPage.dart';
 import 'package:secondsemflut/list_view_page.dart';
+import 'package:secondsemflut/login.dart';
 import 'package:secondsemflut/offers.dart';
+
 import 'package:secondsemflut/regestration_form.dart';
 import 'package:secondsemflut/register.dart';
 import 'package:secondsemflut/splash.dart';
@@ -39,11 +41,12 @@ void main() {
     ),
     
     routes: {
-      '/': (context) => const Splash(),
+      '/': (context) =>  Login(),
       '/register': (context) => const Register(),
       '/listPage': (context) => const ListPage(),
       '/dashboard': (context) => const Dashboard(),
-      '/myAPp': (context) => const MyApp(),
+      '/splash': (context) => const Splash(),
+      '/myapp':(context) => MyApp(),
     },
     initialRoute: '/',
     debugShowCheckedModeBanner: false,

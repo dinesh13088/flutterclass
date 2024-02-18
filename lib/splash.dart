@@ -2,6 +2,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:secondsemflut/login.dart';
 import 'package:secondsemflut/main.dart';
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -16,7 +17,7 @@ class _SplashState extends State<Splash> {
     Timer(
       const Duration(seconds: 5),
       () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
-        return const MyApp();
+        return  MyApp();
       })),
       );
     super.initState();

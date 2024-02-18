@@ -13,4 +13,17 @@ class FirebaseAuthService {
     }
     return null;
   }
+  Future<User?>loginWithEmailPassword(String email,String password) async{
+    try{
+      UserCredential userCredential =await _auth.signInWithEmailAndPassword(email: email, password: password);
+      return userCredential.user;
+
+    }
+    on FirebaseAuthException catch(e)
+    {
+      print('Something went wrong');
+    }
+    return null;
+  }
 }
+

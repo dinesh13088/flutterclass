@@ -49,6 +49,36 @@ class RegestrationForm extends StatelessWidget{
                   const SizedBox(
                     height: 20,
                   ),
+                   TextFormField(
+                    controller: _passwordController,
+                    keyboardType: TextInputType.name,
+                    maxLength: 15,
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: OutlineInputBorder(
+                      
+                        borderSide: const BorderSide(
+                          width: 4,
+                          color: Colors.blue,
+                        ),
+                        borderRadius: BorderRadius.circular(4)
+                      ),
+                    ),
+                    validator: (value){
+                      if(value == null || value.isEmpty)
+                      {
+                        return 'please enter password name';
+
+                      }
+                      return null;
+                    },
+                  ),
+                  
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  
                   TextFormField(
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -126,12 +156,7 @@ class RegestrationForm extends StatelessWidget{
                          }
                       }
                     },
-
                     child: const Text('submit'),
-                   
-                     
-
-
                   ),
                     
                   ],
