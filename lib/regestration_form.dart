@@ -8,6 +8,7 @@ class RegestrationForm extends StatelessWidget{
   final _fullNameController=TextEditingController();
   final _emailController =TextEditingController();
   final _passwordController =TextEditingController();
+  final _phoneController =TextEditingController();
   final _emailRegexPattern = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
   @override
   Widget build(BuildContext context)
@@ -51,7 +52,7 @@ class RegestrationForm extends StatelessWidget{
                   ),
                    TextFormField(
                     controller: _passwordController,
-                    keyboardType: TextInputType.name,
+                    keyboardType: TextInputType.visiblePassword,
                     maxLength: 15,
                     maxLines: 1,
                     decoration: InputDecoration(
@@ -116,7 +117,7 @@ class RegestrationForm extends StatelessWidget{
                     height: 14,
                   ),
                   TextFormField(
-                    controller: _passwordController,
+                    controller: _phoneController,
                     keyboardType: TextInputType.number,
                     maxLength: 10,
                     decoration: InputDecoration(

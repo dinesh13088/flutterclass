@@ -1,18 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:secondsemflut/dashboard.dart';
+import 'package:secondsemflut/dash_board.dart';
 import 'package:secondsemflut/listPage.dart';
 import 'package:secondsemflut/list_view_page.dart';
 import 'package:secondsemflut/login.dart';
 import 'package:secondsemflut/offers.dart';
+import 'package:secondsemflut/profile.dart';
 
 import 'package:secondsemflut/regestration_form.dart';
 import 'package:secondsemflut/register.dart';
 import 'package:secondsemflut/splash.dart';
+import 'package:secondsemflut/utils/default_firebase_option.dart';
 
 
-void main() {
-  initializeFirebase();
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+ await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(MaterialApp(
     title: 'Flutter App!!',
     theme: ThemeData(
@@ -21,7 +24,6 @@ void main() {
       primary: Colors.deepPurple,
       secondary: Colors.white,
       ),
-      
       brightness: Brightness.light,
       useMaterial3: false,
       textTheme: const TextTheme(
@@ -29,12 +31,10 @@ void main() {
           fontSize: 20,
           fontWeight: FontWeight.bold,
           color: Colors.white
-
         ),
         bodySmall:  TextStyle(
           fontSize: 15,
           color: Colors.white,
-  
         )
 
       ),
@@ -44,25 +44,20 @@ void main() {
       '/': (context) =>  Login(),
       '/register': (context) => const Register(),
       '/listPage': (context) => const ListPage(),
-      '/dashboard': (context) => const Dashboard(),
+      '/dashboard': (context) => const Dasshboard(),
       '/splash': (context) => const Splash(),
       '/myapp':(context) => MyApp(),
+      '/profile':(context) => Profile(),
     },
     initialRoute: '/',
     debugShowCheckedModeBanner: false,
   ));
 }
 Future<void> initializeFirebase ()async{
-  await Firebase.initializeApp(options:const FirebaseOptions(
-  apiKey: "AIzaSyCjUQU8wPj1FhGyV9A0czbHGTJmtJqp3Us",
-  authDomain: "samriddi-3rdsem-sec-b.firebaseapp.com",
-  projectId: "samriddi-3rdsem-sec-b",
-  storageBucket: "samriddi-3rdsem-sec-b.appspot.com",
-  messagingSenderId: "1018205099162",
-  appId: "1:1018205099162:web:62d84c572e0859b0823b23",
-  measurementId: "G-TW3QGMD0H4"
-  ) );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
+
+
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -72,7 +67,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> pages =  [const Dashboard(), const ListViewPage(), RegestrationForm(),const  Offers()];
+  List<Widget> pages =  [const Dasshboard(), const ListViewPage(), RegestrationForm(), Profile()];
   int currentPage = 0;
   // This widget is the root of your application.
   @override

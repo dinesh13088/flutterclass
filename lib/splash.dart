@@ -17,7 +17,7 @@ class _SplashState extends State<Splash> {
     Timer(
       const Duration(seconds: 5),
       () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
-        return  MyApp();
+        return  const MyApp();
       })),
       );
     super.initState();

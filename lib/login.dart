@@ -22,7 +22,7 @@ final _passwordController = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const  Text('Login'),
         centerTitle: true,
       ),
       body: Form(
@@ -32,32 +32,31 @@ final _passwordController = TextEditingController();
               TextFormField(
                 controller: _usernameController,
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(
                   ),
                   labelText: 'Enter your username'
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextFormField(
                 controller: _passwordController,
                 obscureText: true,
                 keyboardType: TextInputType.text,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Enter a password',
                 ),
               
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-              
                   FractionallySizedBox(
                     widthFactor: 0.2,
                     child: Checkbox(
@@ -75,7 +74,7 @@ final _passwordController = TextEditingController();
                     ),
                   ),
                   
-                  FractionallySizedBox(
+                  const FractionallySizedBox(
                     widthFactor: 0.8,
                     child: Text('Agree to all conditions of the app?')),
                 ],
@@ -97,17 +96,17 @@ final _passwordController = TextEditingController();
                                }else{
                                 print('Login error');
                                }
-//proceed
+      //proceed
                             }else{
                               print('Please check the terms');
                             }
-                            return null;
+                            
                         }
                       },
                       child: Text('Login'),
                     ),
                   ),
-                  FractionallySizedBox(
+                  const FractionallySizedBox(
                     widthFactor: 0.03,
                   ),
                   FractionallySizedBox(
@@ -117,7 +116,7 @@ final _passwordController = TextEditingController();
                       child:Text('Reset'),
                     ),
                   ),
-                  FractionallySizedBox(
+                  const FractionallySizedBox(
                     widthFactor: 0.03,
                   ),
                   FractionallySizedBox(
@@ -126,7 +125,7 @@ final _passwordController = TextEditingController();
                       onPressed: (){
                       Navigator.of(context).pushReplacementNamed('/myapp');
                       },
-                      child:Text('Signup'),
+                      child:const Text('Signup'),
                     ),
                   )
                 ],
